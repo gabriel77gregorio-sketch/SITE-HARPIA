@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const linhas = [
+  {
+    nome: "Linha Harbeef",
+    sub: "Zero Forragem (Gado de Corte)",
+    slogan: "A Campeã de Vendas!",
+    img: "/zero-forragem.png",
+    desc: "Desenvolvida para o pecuarista que deseja um sistema de terminação ágil, sem a dependência de volumoso. A linha Harbeef Zero Forragem une fontes de energia altamente assimiláveis, minerais quelatados e aditivos melhoradores de desempenho que garantem altíssima conversão de matéria seca em carcaça. Menos manejo de pasto, mais lotes terminados por ano.",
+    variedades: ["Harbeef Zero Forragem (A Campeã)", "Harbeef Engorda Ouro", "Harbeef Confinamento Ouro", "Harbeef Multi Pasto TIP", "Harbeef Multi Pasto Águas", "Harbeef Multi Pasto Seca"],
+    wpp: "Ol%C3%A1%21+Gostaria+de+falar+com+o+consultor+sobre+a+linha+Harbeef+para+gado+de+corte."
+  },
+  {
+    nome: "Linha Harmilk",
+    sub: "Gado de Leite",
+    slogan: "Nutrição Inteligente para encher o Balde de Leite.",
+    img: "/harmilk.png",
+    desc: "Nutrir vacas de alta produção exige exatidão matemática. A linha Harmilk fornece a estabilidade ruminal e o aporte de proteína ideal (22%, 24% ou 27%) para que a lactação permaneça em seu ápice pelo período ideal, melhorando os sólidos totais (gordura e proteína) do leite entregue ao laticínio.",
+    variedades: ["Harmilk Lac 22 D", "Harmilk Lac 24 D", "Harmilk Lac 27 D", "Harmilk Bezerras", "Harmilk Novilhas", "Harmilk Pré-Parto"],
+    wpp: "Ol%C3%A1%21+Gostaria+de+falar+com+o+nutricionista+t%C3%A9cnico+de+gado+de+leite+sobre+a+linha+Harmilk+que+vi+no+site."
+  },
+  {
+    nome: "Linha H Horse",
+    sub: "Equinos",
+    slogan: "Energia, Força e Pelagem Forte.",
+    img: "/h-horse.png",
+    desc: "Seja para o trabalho diário na fazenda ou para competições que demandam fôlego e estrutura, a linha H Horse oferece excelente balanço energético-proteico, assegurando o fortalecimento de tendões, saúde digestiva (prevenção de cólicas) e brilho excepcional da pelagem.",
+    variedades: ["H Horse Equilíbrio 12% proteína", "H Horse Equilíbrio 16% proteína", "H Horse Premium"],
+    wpp: "Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+a+linha+H+Horse+para+equinos."
+  },
+  {
+    nome: "Linha Harphos",
+    sub: "Suplementos Minerais",
+    slogan: "Suplemento Mineral Pronto Para Uso.",
+    img: "/harphos.png",
+    desc: "A carência mineral do pasto brasileiro corrigida com precisão cirúrgica. A linha Harphos repõe de maneira equilibrada todos os minerais essenciais para manter a fertilidade das matrizes de corte/leite inabalada e a estrutura óssea do rebanho em desenvolvimento estável.",
+    variedades: ["Harphos PE 20", "Harphos PE 30", "Harphos Águas", "Harphos Proteico 40", "Harphos Seca"],
+    wpp: "Ol%C3%A1%21+Tenho+interesse+na+linha+Harphos+de+suplementos+minerais."
+  },
+  {
+    nome: "Linha Harpig",
+    sub: "Suinocultura Profissional",
+    slogan: "Máximo Ganho Médio Diário e Conversão Alimentar.",
+    img: "/harpig.png",
+    desc: "Otimize as fases críticas da suinocultura. Da fase inicial e desmame à terminação de carcaças magras com alto rendimento de carne. A linha Harpig é enriquecida com nucleotídeos e enzimas digestivas para máxima imunidade e aproveitamento do alimento.",
+    variedades: ["Harpig Inicial", "Harpig CT", "Harpig GL", "Harpig Concentrado"],
+    wpp: "Ol%C3%A1%21+Gostaria+de+receber+mais+informa%C3%A7%C3%B5es+da+linha+Harpig+para+su%C3%ADnos."
+  },
+  {
+    nome: "Linha Harpia Aves",
+    sub: "Corte e Postura",
+    slogan: "Conversão Perfeita e Ovos de Casca Firme.",
+    img: "/harpia-aves.png",
+    desc: "Fórmulas balanceadas com fontes calibradas de cálcio, fósforo e aminoácidos fundamentais para que as aves apresentem excelente empenamento, ganho de peso uniforme na fase de engorda e alta constância de postura com cascas duras e gemas de excelente coloração.",
+    variedades: ["Harpia Aves Inicial", "Harpia Aves Engorda", "Harpia Aves Postura", "Harpia Aves Concentrado Inicial / Engorda", "Harpia Aves Concentrado Postura"],
+    wpp: "Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+da+linha+Harpia+Aves."
+  },
+  {
+    nome: "Linha Exclusiva",
+    sub: "Multiespécies / Ovinos",
+    slogan: "Versatilidade Completa no Manejo do Sítio ou Fazenda.",
+    img: "/exclusiva.png",
+    desc: "Projetada como uma ração pronta para uso curinga para a propriedade. A Linha Exclusiva e a linha de ovinos foram desenvolvidas com excelente digestibilidade para garantir estabilidade nutricional a ruminantes, equinos, aves, ovinos e suínos. Praticidade na estocagem de ração na fazenda e rendimento assegurado no dia a dia.",
+    variedades: ["Harpia Concentrado Mix", "Harsheep Creep (Para cordeiros)", "Harsheep Confinamento", "Harsheep Manutenção"],
+    wpp: "Ol%C3%A1%21+Quero+saber+sobre+a+Linha+Exclusiva+e+ra%C3%A7%C3%B5es+para+Ovinos."
+  }
+];
+---
+
+<Layout title="Linhas de Rações | Harpia Nutrição Animal">
+  <!-- ============================================== -->
+  <!-- HERO MOBILE (Efeito Moderno e Fosco)           -->
+  <!-- ============================================== -->
+  <div class="block lg:hidden relative w-full bg-[#0a1812] overflow-hidden">
+    <!-- Imagem Base com Origin-top para o scale não criar buracos acima -->
+    <img id="racoes-hero-mobile-img" src="/hero-racoes.png" alt="Linhas de Rações Harpia" class="w-full h-auto object-contain relative z-10 border-b border-white/5 will-change-[filter,transform] origin-top" />
+    <!-- Overlay Fosco que escurece no scroll -->
+    <div id="racoes-hero-mobile-overlay" class="absolute inset-0 z-20 pointer-events-none bg-[#0a1812]/0"></div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- HERO DESKTOP (Fundo Fixo com Efeito Desfoque)  -->
+  <!-- ============================================== -->
+  <div id="racoes-hero-bg" class="hidden lg:block fixed top-0 left-0 w-full h-[100vh] z-0 will-change-[filter,opacity] bg-[#0a1812]">
+    <img src="/hero-racoes.png" alt="Linhas de Rações Harpia" class="w-full h-full object-cover object-top" />
+    <div id="racoes-hero-overlay" class="absolute inset-0 bg-black/0"></div>
+  </div>
+  
+  <!-- Espaçador invisível (Apenas Desktop) -->
+  <div class="hidden lg:block relative w-full h-[85vh] z-10"></div>
+
+  <!-- A seção seguinte (Lista de Produtos) -->
+  <div class="bg-[#0a1812] py-12 lg:py-24 relative z-30 border-t border-white/5 lg:bg-[#0a1812]/70 lg:backdrop-blur-md shadow-[0_-10px_30px_rgba(0,0,0,0.5)] lg:shadow-[0_-30px_60px_rgba(0,0,0,0.8)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-32">
+      {linhas.map((linha, index) => (
+        <div class={`flex flex-col lg:flex-row gap-8 lg:gap-20 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+          
+          <!-- Imagem da Linha -->
+          <div class="w-full lg:w-1/2 relative group">
+            <div class="absolute inset-0 bg-harpia-gold rounded-2xl lg:rounded-3xl translate-x-3 translate-y-3 lg:translate-x-4 lg:translate-y-4 opacity-10 group-hover:translate-x-4 group-hover:translate-y-4 lg:group-hover:translate-x-6 lg:group-hover:translate-y-6 transition-all duration-500"></div>
+            <img src={linha.img} alt={linha.nome} class="rounded-2xl lg:rounded-3xl shadow-xl lg:shadow-2xl relative z-10 w-full h-auto object-contain bg-black/30 border border-white/5 group-hover:-translate-y-1 lg:group-hover:-translate-y-2 transition-transform duration-500" />
+            <div class="absolute top-4 left-4 lg:top-6 lg:left-6 z-20 bg-harpia-bg/90 backdrop-blur-md px-4 py-2 lg:px-5 lg:py-2.5 rounded-full border border-white/10 text-white font-playfair italic shadow-xl lg:shadow-2xl text-sm lg:text-base">
+              {linha.sub}
+            </div>
+          </div>
+
+          <!-- Conteúdo -->
+          <div class="w-full lg:w-1/2">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-white mb-2 lg:mb-3">{linha.nome}</h2>
+            <p class="text-harpia-gold font-bold uppercase tracking-widest text-xs lg:text-sm mb-6 lg:mb-8">{linha.slogan}</p>
+            <p class="text-harpia-light/80 font-inter leading-relaxed mb-8 lg:mb-10 text-base lg:text-lg">
+              {linha.desc}
+            </p>
+            
+            <div class="bg-harpia-card/40 backdrop-blur-sm border border-white/5 p-5 lg:p-8 rounded-2xl lg:rounded-3xl mb-8 lg:mb-10 shadow-inner">
+              <h4 class="text-white font-bold mb-4 lg:mb-6 font-inter text-base lg:text-lg flex items-center gap-2">
+                 <div class="w-2 h-2 rounded-full bg-harpia-gold"></div> Variedades Disponíveis:
+              </h4>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
+                {linha.variedades.map(v => (
+                  <li class="flex items-start gap-2 lg:gap-3 text-sm text-harpia-light/70 font-medium">
+                    <svg class="w-4 h-4 lg:w-5 lg:h-5 text-harpia-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    {v}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <a href={`https://wa.me/556230000000?text=${linha.wpp}`} target="_blank" class="inline-flex items-center justify-center gap-3 bg-harpia-gold text-harpia-bg font-bold w-full lg:w-auto px-6 py-3 lg:px-8 lg:py-4 rounded-full hover:bg-white transition-all text-sm shadow-[0_0_15px_rgba(230,200,117,0.2)] lg:shadow-[0_0_20px_rgba(230,200,117,0.3)] transform hover:-translate-y-1">
+              Falar com o Especialista Técnico
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Fim da seção das rações -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const heroBg = document.getElementById('racoes-hero-bg');
+      const heroOverlay = document.getElementById('racoes-hero-overlay');
+      
+      const mobileImg = document.getElementById('racoes-hero-mobile-img');
+      const mobileOverlay = document.getElementById('racoes-hero-mobile-overlay');
+
+      let ticking = false;
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const scrollY = window.scrollY;
+            
+            // --- EFEITO DESKTOP ---
+            if (heroBg && heroOverlay && window.innerWidth >= 1024) {
+              const blurAmount = Math.min(scrollY * 0.04, 25);
+              const darkenAmount = Math.min(scrollY / 800, 0.8);
+              heroBg.style.filter = `blur(${blurAmount}px)`;
+              heroOverlay.style.backgroundColor = `rgba(0, 0, 0, ${darkenAmount})`;
+            }
+
+            // --- EFEITO MOBILE (Fosco Moderno) ---
+            if (mobileImg && mobileOverlay && window.innerWidth < 1024) {
+              // Aplica desfoque fosco na rolagem
+              const blurMobile = Math.min(scrollY * 0.05, 12);
+              
+              // Leve efeito de escala (encolhe) para simular profundidade, fixando o topo (origin-top no CSS)
+              const scaleMobile = Math.max(1 - scrollY * 0.0005, 0.95);
+              
+              mobileImg.style.transform = `scale(${scaleMobile}) translateY(${scrollY * 0.15}px)`;
+              mobileImg.style.filter = `blur(${blurMobile}px)`;
+              
+              // Escurece o overlay com tom fosco esverdeado
+              const darkenMobile = Math.min(scrollY / 400, 0.8);
+              mobileOverlay.style.backgroundColor = `rgba(10, 24, 18, ${darkenMobile})`;
+            }
+
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    });
+  </script>
+</Layout>

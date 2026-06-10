@@ -1,0 +1,99 @@
+---
+---
+<div class="relative z-20 border-y border-white/5 bg-harpia-bg/50 backdrop-blur-md">
+  
+  <!-- DESKTOP: Estático e Centralizado (Largura 2x maior) -->
+  <div class="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+      
+      <!-- Texto de Introdução Sutil -->
+      <div class="shrink-0 text-center lg:text-left">
+        <p class="text-xs uppercase tracking-[0.2em] font-semibold text-harpia-gold/80 font-inter">
+          Parceiros de Sucesso
+        </p>
+        <p class="text-[10px] text-harpia-light/40 font-inter mt-1 uppercase tracking-wider">
+          Marcas que confiam na Harpia
+        </p>
+      </div>
+      
+      <!-- Lista de Logos (2x Maiores) -->
+      <div class="flex flex-wrap items-center justify-center gap-12 lg:gap-16">
+        <div class="h-12 lg:h-14 w-44 lg:w-52 flex items-center justify-center group shrink-0">
+          <img 
+            src="/logos/logo1.svg" 
+            alt="Parceiro AgroTech" 
+            class="h-full w-auto object-contain filter brightness-0 invert opacity-30 group-hover:opacity-80 group-hover:scale-105 transition-all duration-300"
+          />
+        </div>
+        <div class="h-12 lg:h-14 w-44 lg:w-52 flex items-center justify-center group shrink-0">
+          <img 
+            src="/logos/logo2.svg" 
+            alt="Parceiro BioNutri" 
+            class="h-full w-auto object-contain filter brightness-0 invert opacity-30 group-hover:opacity-80 group-hover:scale-105 transition-all duration-300"
+          />
+        </div>
+        <div class="h-12 lg:h-14 w-44 lg:w-52 flex items-center justify-center group shrink-0">
+          <img 
+            src="/logos/logo3.svg" 
+            alt="Parceiro Apex" 
+            class="h-full w-auto object-contain filter brightness-0 invert opacity-30 group-hover:opacity-80 group-hover:scale-105 transition-all duration-300"
+          />
+        </div>
+        <div class="h-12 lg:h-14 w-44 lg:w-52 flex items-center justify-center group shrink-0">
+          <img 
+            src="/logos/logo4.svg" 
+            alt="Parceiro Terra" 
+            class="h-full w-auto object-contain filter brightness-0 invert opacity-30 group-hover:opacity-80 group-hover:scale-105 transition-all duration-300"
+          />
+        </div>
+        <div class="h-12 lg:h-14 w-44 lg:w-52 flex items-center justify-center group shrink-0">
+          <img 
+            src="/logos/logo5.svg" 
+            alt="Parceiro Ceres" 
+            class="h-full w-auto object-contain filter brightness-0 invert opacity-30 group-hover:opacity-80 group-hover:scale-105 transition-all duration-300"
+          />
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- MOBILE: Efeito Marquee Infinito (Painel de LED) -->
+  <div class="block md:hidden w-full overflow-hidden py-8">
+    <!-- Título móvel centralizado -->
+    <div class="text-center mb-6 px-4">
+      <p class="text-[10px] uppercase tracking-[0.2em] font-semibold text-harpia-gold/80 font-inter">
+        Parceiros de Sucesso
+      </p>
+      <p class="text-[9px] text-harpia-light/40 font-inter mt-0.5 uppercase tracking-wider">
+        Marcas que confiam na Harpia
+      </p>
+    </div>
+
+    <!-- Área de Rolagem do Marquee -->
+    <div class="flex items-center w-full relative">
+      <!-- Bloco de Logos 1 -->
+      <div class="flex items-center animate-marquee whitespace-nowrap min-w-max">
+        <div class="flex items-center gap-12 px-6">
+          <img src="/logos/logo1.svg" alt="Parceiro AgroTech" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+          <img src="/logos/logo2.svg" alt="Parceiro BioNutri" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+          <img src="/logos/logo3.svg" alt="Parceiro Apex" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+          <img src="/logos/logo4.svg" alt="Parceiro Terra" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+          <img src="/logos/logo5.svg" alt="Parceiro Ceres" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+        </div>
+      </div>
+      
+      <!-- Bloco de Logos 2 (Duplicado para loop infinito fluído) -->
+      <div class="flex items-center animate-marquee whitespace-nowrap min-w-max" aria-hidden="true">
+        <div class="flex items-center gap-12 px-6">
+          <img src="/logos/logo1.svg" alt="Parceiro AgroTech" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+          <img src="/logos/logo2.svg" alt="Parceiro BioNutri" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+          <img src="/logos/logo3.svg" alt="Parceiro Apex" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+          <img src="/logos/logo4.svg" alt="Parceiro Terra" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+          <img src="/logos/logo5.svg" alt="Parceiro Ceres" class="h-10 w-auto object-contain filter brightness-0 invert opacity-30 shrink-0" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

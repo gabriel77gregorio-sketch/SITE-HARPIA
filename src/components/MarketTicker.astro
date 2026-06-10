@@ -1,0 +1,114 @@
+---
+---
+<div class="bg-harpia-card/60 backdrop-blur-lg border-b border-white/10 pt-24 pb-3 px-4 z-40 relative">
+  <div class="max-w-7xl mx-auto flex flex-col items-center justify-center gap-2">
+    
+    <div class="w-full overflow-hidden flex relative">
+      <!-- Gradient masks for smooth fading edges -->
+      <div class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-harpia-card/60 to-transparent z-10 hidden md:block"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-harpia-card/60 to-transparent z-10 hidden md:block"></div>
+      
+      <div class="flex items-center w-full relative">
+        <div class="flex items-center animate-marquee whitespace-nowrap min-w-max">
+          <div id="ticker-1" class="flex items-center gap-6 text-sm text-harpia-light px-3">
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-white">Boi Gordo (B3 / CEPEA):</span>
+              <span class="text-green-400 font-mono">R$ 235,50 / arroba</span>
+            </div>
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-white">Milho (B3 / Campinas):</span>
+              <span class="text-green-400 font-mono">R$ 62,30 / saca</span>
+            </div>
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-white">Café Arábica (B3 / CEPEA):</span>
+              <span class="text-green-400 font-mono">R$ 1.120,00 / saca</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center animate-marquee whitespace-nowrap min-w-max" aria-hidden="true">
+          <div id="ticker-2" class="flex items-center gap-6 text-sm text-harpia-light px-3">
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-white">Boi Gordo (B3 / CEPEA):</span>
+              <span class="text-green-400 font-mono">R$ 235,50 / arroba</span>
+            </div>
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-white">Milho (B3 / Campinas):</span>
+              <span class="text-green-400 font-mono">R$ 62,30 / saca</span>
+            </div>
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-white">Café Arábica (B3 / CEPEA):</span>
+              <span class="text-green-400 font-mono">R$ 1.120,00 / saca</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-2 text-xs text-harpia-light/50 text-center md:text-right">
+    * Fonte: CEPEA/B3
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const ticker1 = document.getElementById('ticker-1');
+    const ticker2 = document.getElementById('ticker-2');
+    
+    try {
+      // Usando a BrAPI com o seu Token. 
+      // NOTA: Para commodities agrícolas na B3, você deve usar os códigos dos contratos futuros vigentes (ex: BGIV24, CCMU24, ICFU24).
+      // Coloquei PETR4 e VALE3 apenas para testar a conexão com sucesso. Troque pelos códigos do Boi/Milho/Café.
+      const API_URL = 'https://brapi.dev/api/quote/PETR4,VALE3,ITUB4?token=f3TaPDCUNAJ8XiGjSZcyTr'; 
+      
+      const response = await fetch(API_URL);
+      if (!response.ok) throw new Error('Falha ao buscar cotações na BrAPI');
+      
+      const data = await response.json();
+      
+      // A BrAPI retorna os dados dentro da propriedade "results"
+      if (data && data.results && Array.isArray(data.results)) {
+        
+        const nomesPersonalizados = {
+          'PETR4': 'Petrobras (Exemplo)',
+          'VALE3': 'Vale (Exemplo)',
+          'ITUB4': 'Itaú (Exemplo)',
+          // Adicione os códigos reais aqui: 'BGIV24': 'Boi Gordo (B3)', 'CCMU24': 'Milho (B3)'
+        };
+
+        const createHTML = (results) => {
+          return results.map(item => {
+            const nomeExibicao = nomesPersonalizados[item.symbol] || item.symbol;
+            // Formatar número para moeda Real
+            const precoFormatado = item.regularMarketPrice ? item.regularMarketPrice.toFixed(2).replace('.', ',') : '0,00';
+            
+            // Lógica de cores baseada na variação (positivo = verde, negativo = vermelho)
+            const isPositive = item.regularMarketChangePercent >= 0;
+            const colorClass = isPositive ? 'text-green-400' : 'text-red-400';
+            const dotClass = isPositive ? 'bg-green-500' : 'bg-red-500';
+
+            return `
+            <div class="w-2 h-2 rounded-full ${dotClass} animate-pulse"></div>
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-white">${nomeExibicao}:</span>
+              <span class="${colorClass} font-mono">R$ ${precoFormatado}</span>
+            </div>
+            `;
+          }).join('');
+        };
+        
+        const html = createHTML(data.results);
+        if (ticker1) ticker1.innerHTML = html;
+        if (ticker2) ticker2.innerHTML = html;
+      }
+    } catch (error) {
+      console.warn("Usando cotações estáticas. Erro da API BrAPI:", error);
+      // Mantém as cotações padrão definidas no HTML caso a API falhe ou as siglas estejam incorretas
+    }
+  });
+</script>

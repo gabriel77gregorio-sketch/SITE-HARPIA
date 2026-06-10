@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="currentColor" class="w-full h-full">
+  <circle cx="30" cy="30" r="16" fill="none" stroke="currentColor" stroke-width="4"/>
+  <circle cx="30" cy="30" r="8" fill="currentColor"/>
+  <text x="60" y="38" font-family="'Inter', sans-serif" font-weight="700" font-size="20" letter-spacing="1">AGROTECH</text>
+</svg>

@@ -1,0 +1,58 @@
+---
+const products = [
+  {
+    name: 'Harpia Engorda Premium',
+    desc: 'Alta conversão alimentar para confinamento.',
+    image: 'https://images.unsplash.com/photo-1594771804886-a933bb2d609b?q=80&w=2082&auto=format&fit=crop',
+    rating: 5,
+    featured: false
+  },
+  {
+    name: 'Suplemento Mineral+',
+    desc: 'Balanço perfeito para gado de corte a pasto.',
+    image: 'https://images.unsplash.com/photo-1545622783-b3e0214ee472?q=80&w=2070&auto=format&fit=crop',
+    rating: 5,
+    featured: true
+  },
+  {
+    name: 'Milho Grão Inteiro',
+    desc: 'Energia pura para terminação acelerada.',
+    image: 'https://images.unsplash.com/photo-1595804369792-563d7e7dc364?q=80&w=2071&auto=format&fit=crop',
+    rating: 4.8,
+    featured: false
+  }
+];
+---
+<section class="py-24 bg-harpia-bg border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 animate-fade-in-up">
+      <h2 class="text-4xl lg:text-5xl font-playfair font-bold text-white mb-4">Nossos Destaques</h2>
+      <p class="text-harpia-light/70 max-w-2xl mx-auto">As linhas de produtos mais escolhidas pelos produtores de ponta do país.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 items-end">
+      {products.map((p, i) => (
+        <div class={`bg-harpia-card rounded-3xl overflow-hidden shadow-2xl border border-white/5 group relative ${p.featured ? 'lg:-translate-y-8' : ''}`}>
+          <!-- Rating Floating -->
+          <div class="absolute top-4 left-4 bg-white/10 backdrop-blur-md rounded-full px-3 py-1 flex items-center gap-1 text-xs text-white z-10 border border-white/10">
+            <span class="text-harpia-gold">★★★★★</span> ({p.rating})
+          </div>
+          
+          <!-- Plus Button -->
+          <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md rounded-full w-8 h-8 flex items-center justify-center text-white z-10 border border-white/10 hover:bg-harpia-gold hover:text-harpia-bg transition-colors cursor-pointer">
+            +
+          </div>
+
+          <div class="h-64 overflow-hidden">
+            <img src={p.image} alt={p.name} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80" />
+          </div>
+          
+          <div class={`p-8 relative ${p.featured ? 'bg-harpia-green/20' : ''}`}>
+            <h3 class="text-2xl font-playfair font-bold text-white mb-2">{p.name}</h3>
+            <p class="text-harpia-light/70 text-sm mb-6">{p.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

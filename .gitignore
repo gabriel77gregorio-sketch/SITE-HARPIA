@@ -1,0 +1,23 @@
+# Astro
+.astro/
+dist/
+
+# Vercel
+.vercel/
+
+# Dependências
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variáveis de Ambiente
+.env
+.env.*
+
+# Sistema
+.DS_Store
+Thumbs.db

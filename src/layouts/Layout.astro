@@ -1,0 +1,34 @@
+---
+import Header from '../components/Header.astro';
+import MarketTicker from '../components/MarketTicker.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Harpia Nutrição Animal - Nutrindo campeões!" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+	<body class="font-inter bg-harpia-bg text-harpia-light antialiased overflow-x-hidden selection:bg-harpia-gold selection:text-harpia-bg flex flex-col min-h-screen">
+		<Header />
+		<MarketTicker />
+		<main class="flex-grow">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
