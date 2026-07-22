@@ -5,17 +5,17 @@ export default {
     extend: {
       colors: {
         harpia: {
-          bg: '#0d1f18',
-          card: '#163b2a',
-          gold: '#e6c875',
-          light: '#e6efeb',
-          muted: '#889d91',
-          green: '#2d5a27',
-          dark: '#0A2A18'
+          bg: '#ffffff',      // Fundo principal branco
+          card: '#f4f6f5',    // Cards cinza-esverdeados muito suaves
+          gold: '#b28723',    // Dourado com contraste ainda maior sobre branco
+          light: '#0f172a',   // Texto principal slate-900 (contraste máximo)
+          muted: '#334155',   // Texto secundário slate-700 (contraste excelente)
+          green: '#0e4e2d',   // Verde mais escuro para botões/destaques
+          dark: '#05140d'     // Verde quase preto para títulos destacados
         }
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
+        inter: ['Nunito', 'sans-serif'],
         playfair: ['"Playfair Display"', 'serif'],
       },
       animation: {
