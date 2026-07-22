@@ -54,27 +54,35 @@
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-64 sm:h-64 bg-harpia-green/15 blur-[60px] sm:blur-[80px] rounded-full pointer-events-none"></div>
       
       <!-- Card Superior: Desempenho -->
-      <div class="bg-gradient-to-br from-white/95 to-slate-50/90 backdrop-blur-xl border border-slate-200/80 p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-xl relative lg:translate-x-4 hover:-translate-y-1 transition-transform">
-        <div class="flex justify-between items-start mb-3 sm:mb-4">
-          <div class="bg-harpia-green/10 text-harpia-green text-[10px] sm:text-xs px-2.5 py-1 sm:px-3 rounded-full font-bold uppercase tracking-wide">
-            Resultado Comprovado
+      <div class="bg-gradient-to-br from-white/95 to-slate-50/90 backdrop-blur-xl border border-slate-200/80 p-5 sm:p-6 rounded-2xl sm:rounded-3xl shadow-xl relative lg:translate-x-4 hover:-translate-y-1 transition-transform overflow-hidden">
+        
+        <!-- Marca d'água da Ração (Cara de Bovino/Ração) -->
+        <img src="/zero-forragem.png" alt="Ração Bovinos" class="absolute -right-8 -bottom-10 w-36 sm:w-44 opacity-[0.12] rotate-[-10deg] pointer-events-none drop-shadow-lg" />
+
+        <div class="flex justify-between items-start mb-3 sm:mb-4 relative z-10">
+          <div class="bg-harpia-green/10 text-harpia-green text-[10px] sm:text-xs px-2.5 py-1 sm:px-3 rounded-full font-bold uppercase tracking-wide flex items-center gap-1.5 border border-harpia-green/20">
+            <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 22 2"/><path d="M12 2a10 10 0 0 0-10 10"/><path d="M22 12A10 10 0 0 0 12 2"/><path d="M16 12a4 4 0 0 0-4 4"/><path d="M20 16a4 4 0 0 0-4 4"/><path d="M12 16a4 4 0 0 0-4 4"/><path d="M8 12a4 4 0 0 0-4 4"/></svg>
+            Nutrição de Corte
           </div>
-          <div class="flex text-harpia-gold gap-0.5 text-[10px] sm:text-xs">
+          <div class="flex text-harpia-green gap-0.5 text-[10px] sm:text-xs">
             ★★★★★
           </div>
         </div>
-        <h3 class="text-3xl sm:text-4xl font-playfair font-bold text-harpia-green mb-1">+7,01 @</h3>
-        <p class="text-xs sm:text-sm text-harpia-muted font-inter mb-3 sm:mb-4">Ganho líquido por animal em 72 dias</p>
         
-        <!-- Grafico simulado -->
-        <div class="flex items-end gap-1.5 sm:gap-2 h-10 sm:h-12 mt-2">
-          <div class="w-1/5 bg-harpia-green/10 rounded-t-sm h-1/4"></div>
-          <div class="w-1/5 bg-harpia-green/20 rounded-t-sm h-2/4"></div>
-          <div class="w-1/5 bg-harpia-green/35 rounded-t-sm h-3/4"></div>
-          <div class="w-1/5 bg-harpia-gold/60 rounded-t-sm h-4/5"></div>
-          <div class="w-1/5 bg-harpia-gold rounded-t-sm h-full relative group">
-            <div class="absolute -top-1.5 sm:-top-2 -right-1 sm:-right-1.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white border-2 border-harpia-gold rounded-full shadow-md"></div>
-            <div class="absolute -top-1.5 sm:-top-2 -right-1 sm:-right-1.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-harpia-gold rounded-full animate-ping opacity-75"></div>
+        <div class="relative z-10">
+          <h3 class="text-3xl sm:text-4xl font-playfair font-bold text-harpia-green mb-1">+7,01 @</h3>
+          <p class="text-xs sm:text-sm text-harpia-muted font-inter mb-3 sm:mb-4">Ganho líquido por bovino em 72 dias</p>
+          
+          <!-- Grafico simulado -->
+          <div class="flex items-end gap-1.5 sm:gap-2 h-10 sm:h-12 mt-2">
+            <div class="w-1/5 bg-harpia-green/15 rounded-t-sm h-1/4"></div>
+            <div class="w-1/5 bg-harpia-green/30 rounded-t-sm h-2/4"></div>
+            <div class="w-1/5 bg-harpia-green/50 rounded-t-sm h-3/4"></div>
+            <div class="w-1/5 bg-harpia-green/70 rounded-t-sm h-4/5"></div>
+            <div class="w-1/5 bg-harpia-green rounded-t-sm h-full relative group">
+              <div class="absolute -top-1.5 sm:-top-2 -right-1 sm:-right-1.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white border-2 border-harpia-green rounded-full shadow-md"></div>
+              <div class="absolute -top-1.5 sm:-top-2 -right-1 sm:-right-1.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-harpia-green rounded-full animate-ping opacity-75"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -82,11 +90,11 @@
       <!-- Card Inferior: Confiança -->
       <div class="bg-white/95 backdrop-blur-xl border border-slate-200/80 p-4 sm:p-5 rounded-2xl sm:rounded-3xl shadow-lg flex items-center gap-3 sm:gap-4 lg:-translate-x-4 hover:-translate-y-1 transition-transform">
         <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-harpia-green/10 flex items-center justify-center shrink-0 border border-harpia-green/20">
-          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-harpia-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 text-harpia-green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 11 11 .9c.6 0 .9.5.8 1.1l-.8 5h-1"/><path d="M16 18h-5"/><path d="M18 5a1 1 0 0 0-1 1v5.573"/><path d="M3 4h9l1 7.246"/><path d="M4 11V4"/><path d="M7 15h.01"/><path d="M8 10.1V4"/><circle cx="18" cy="18" r="2"/><circle cx="7" cy="15" r="5"/></svg>
         </div>
         <div>
-          <p class="text-slate-800 font-bold font-inter text-xs sm:text-sm">Qualidade de Origem</p>
-          <p class="text-[10px] sm:text-xs text-harpia-muted mt-0.5">Matérias-primas rigorosamente selecionadas.</p>
+          <p class="text-slate-800 font-bold font-inter text-xs sm:text-sm">Direto da Fazenda</p>
+          <p class="text-[10px] sm:text-xs text-harpia-muted mt-0.5">Produção local com ingredientes selecionados.</p>
         </div>
       </div>
     </div>
